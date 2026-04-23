@@ -15,6 +15,14 @@ program.parse();
 const options = program.opts();
 
 const app = express();
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+try {
+    const swaggerDocument = YAML.load('./swagger.yaml');
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+} catch (e) {
+    console.log("Файл swagger.yaml не знайдено");
+}
 
 // --- НАЛАШТУВАННЯ MULTER (для завантаження фото) ---
 const storage = multer.diskStorage({

@@ -1,0 +1,321 @@
+{
+  "info": {
+    "_postman_id": "d8997d62-d0dc-4acf-aa00-72564d589743",
+    "name": "Inventory_System_Lab06",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54257503",
+    "_collection_link": "https://go.postman.co/collection/54257503-d8997d62-d0dc-4acf-aa00-72564d589743?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Get All Inventory",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3000/inventory",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register Item",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "inventory_name",
+              "type": "text",
+              "uuid": "c86d374c-5a14-4dc7-a952-0b9b2eb1c4a2",
+              "value": "Стілець"
+            },
+            {
+              "key": "description",
+              "type": "text",
+              "uuid": "f5fa5131-3966-4777-b610-53ba9f6cabd5",
+              "value": "Офісний, чорний"
+            },
+            {
+              "key": "photo",
+              "type": "file",
+              "uuid": "f7fe6a76-1d9d-457a-8b05-110dc07a1ab9",
+              "src": "/C:/Users/userPC/Downloads/завантаження.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3000/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Item",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "3d253de0-20c6-4b54-8429-309835f0248b",
+              "type": "text",
+              "uuid": "c84c5804-c5ff-4dd6-bd7d-e7cbc7872afa"
+            },
+            {
+              "key": "has_photo",
+              "value": "true",
+              "type": "text",
+              "uuid": "7b08e156-26af-442a-90bc-5d4cc5999fb1"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3000/search",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "search"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Item by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3000/inventory/3d253de0-20c6-4b54-8429-309835f0248b",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "3d253de0-20c6-4b54-8429-309835f0248b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Name/Desc",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Нова назва\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3000/inventory/3d253de0-20c6-4b54-8429-309835f0248b",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "3d253de0-20c6-4b54-8429-309835f0248b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Photo",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "photo",
+              "type": "file",
+              "uuid": "2afd7c91-967a-48e4-acee-41d955f71df1",
+              "value": null
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3000/inventory/3d253de0-20c6-4b54-8429-309835f0248b/photo",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "3d253de0-20c6-4b54-8429-309835f0248b",
+            "photo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Item",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "photo",
+              "type": "file",
+              "uuid": "2afd7c91-967a-48e4-acee-41d955f71df1",
+              "value": null
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3000/inventory/3d253de0-20c6-4b54-8429-309835f0248b/photo",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "3d253de0-20c6-4b54-8429-309835f0248b",
+            "photo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check 404",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Нова назва\"}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3000/inventory/3d234de0-20c6-4b54-8429-309835f0248b",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "3d234de0-20c6-4b54-8429-309835f0248b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check 405",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3000/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Photo File",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3000/inventory/3d253de0-20c6-4b54-8429-309835f0248b/photo",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "3d253de0-20c6-4b54-8429-309835f0248b",
+            "photo"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Inventory Service API (LNU Lab 6)
+  version: 1.0.0
+  description: API для реєстрації та пошуку інвентарю. Студент Філяс Максим.
+paths:
+  /register:
+    post:
+      summary: Реєстрація нового пристрою
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                inventory_name: { type: string }
+                description: { type: string }
+                photo: { type: string, format: binary }
+      responses:
+        '201':
+          description: Успішно створено
+  /inventory:
+    get:
+      summary: Отримати весь список
+      responses:
+        '200':
+          description: OK
+  /inventory/{id}:
+    get:
+      summary: Деталі конкретної речі
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+        '404': { description: Not Found }
+  /search:
+    post:
+      summary: Пошук за ID (x-www-form-urlencoded)
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                id: { type: string }
+                has_photo: { type: string }
+      responses:
+        '200': { description: OK }
