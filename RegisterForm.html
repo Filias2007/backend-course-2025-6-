@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація інвентарю</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; line-height: 1.6; }
+        form { max-width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input, textarea { width: 100%; margin-bottom: 15px; padding: 8px; box-sizing: border-box; }
+        button { background-color: #28a745; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <h2>Реєстрація нової речі</h2>
+    <form action="/register" method="POST" enctype="multipart/form-data">
+        <label>Назва речі (обов'язково):</label>
+        <input type="text" name="inventory_name" required>
+
+        <label>Опис:</label>
+        <textarea name="description" rows="4"></textarea>
+
+        <label>Фото пристрою:</label>
+        <input type="file" name="photo" accept="image/jpeg,image/png">
+
+        <button type="submit">Зареєструвати</button>
+    </form>
+</body>
+</html>

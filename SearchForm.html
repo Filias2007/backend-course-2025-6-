@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Пошук інвентарю</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; line-height: 1.6; }
+        form { max-width: 400px; padding: 20px; border: 1px solid #007bff; border-radius: 8px; }
+        input[type="text"] { width: 100%; margin-bottom: 15px; padding: 8px; box-sizing: border-box; }
+        .checkbox-group { margin-bottom: 15px; }
+        button { background-color: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px; }
+        button:hover { background-color: #0069d9; }
+    </style>
+</head>
+<body>
+    <h2>Пошук за ID / Серійним номером</h2>
+    <form action="/search" method="POST">
+        <label>Введіть ID пристрою:</label>
+        <input type="text" name="id" placeholder="Наприклад: e96690cf-..." required>
+
+        <div class="checkbox-group">
+            <input type="checkbox" name="has_photo" value="true" id="photo_check">
+            <label for="photo_check">Додати посилання на фото до опису</label>
+        </div>
+
+        <button type="submit">Знайти</button>
+    </form>
+</body>
+</html>
